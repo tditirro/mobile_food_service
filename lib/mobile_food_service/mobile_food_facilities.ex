@@ -2,8 +2,11 @@ defmodule MobileFoodService.MobileFoodFacilities do
   @moduledoc """
   The MobileFoodFacilities context.
   """
+  alias Ecto.NoResultsError
   alias MobileFoodService.Repo
   alias MobileFoodService.MobileFoodFacilities.{Facility, Type}
+
+  require Logger
 
   @doc """
   Returns the list of facilities.
@@ -35,8 +38,16 @@ defmodule MobileFoodService.MobileFoodFacilities do
 
   """
   def get_facility!(id) do
-    Repo.get!(id)
-    |> Enum.map(fn x -> Facility.changeset(to_facility_map(x)) end)
+    result = Repo.get!(id)
+    # Logger.info(IO.inspect(Enum.empty?(result), label: "EMPTY????"))
+    cond do
+      Enum.empty?(result) ->
+        raise NoResultsError, queryable: "facilities where id = #{id}"
+      true ->
+        List.first(result)
+        |> to_facility_map()
+        |> Facility.changeset()
+    end
   end
 
   @doc """
@@ -44,7 +55,7 @@ defmodule MobileFoodService.MobileFoodFacilities do
 
   ## Examples
 
-      iex> search()
+      iex> search("hamburgers")
       [%Facility{}, ...]
 
   """
