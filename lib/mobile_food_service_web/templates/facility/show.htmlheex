@@ -1,0 +1,53 @@
+<h1>Show Facility</h1>
+
+<ul>
+
+  <li>
+    <strong>Id:</strong>
+    <%= @facility.id %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @facility.name %>
+  </li>
+
+  <li>
+    <strong>Food items:</strong>
+    <%= @facility.food_items %>
+  </li>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @facility.type %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @facility.address %>
+  </li>
+
+  <li>
+    <strong>Location description:</strong>
+    <%= @facility.location_description %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @facility.status %>
+  </li>
+
+  <li>
+    <strong>Schedule:</strong>
+    <%= @facility.schedule %>
+  </li>
+
+  <li>
+    <strong>Schedule url:</strong>
+    <%= @facility.schedule_url %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.facility_path(@conn, :edit, @facility) %></span> |
+<span><%= link "Back", to: Routes.facility_path(@conn, :index) %></span>

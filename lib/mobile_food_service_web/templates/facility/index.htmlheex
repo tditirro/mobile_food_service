@@ -1,0 +1,42 @@
+<h1>Listing Facilities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Food items</th>
+      <th>Type</th>
+      <th>Address</th>
+      <th>Location description</th>
+      <th>Status</th>
+      <th>Schedule</th>
+      <th>Schedule url</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for facility <- @facilities do %>
+    <tr>
+      <td><%= facility.id %></td>
+      <td><%= facility.name %></td>
+      <td><%= facility.food_items %></td>
+      <td><%= facility.type %></td>
+      <td><%= facility.address %></td>
+      <td><%= facility.location_description %></td>
+      <td><%= facility.status %></td>
+      <td><%= facility.schedule %></td>
+      <td><%= facility.schedule_url %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.facility_path(@conn, :show, facility) %></span>
+        <span><%= link "Edit", to: Routes.facility_path(@conn, :edit, facility) %></span>
+        <span><%= link "Delete", to: Routes.facility_path(@conn, :delete, facility), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Facility", to: Routes.facility_path(@conn, :new) %></span>
