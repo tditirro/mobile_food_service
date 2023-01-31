@@ -1,6 +1,6 @@
 # MobileFoodService
 
-API for discovering mobile food facilities written in Elixir using Phoenix.
+API for discovering mobile food facilities written in Elixir using Phoenix Framework.
 
 To start your Phoenix server:
 
@@ -28,13 +28,13 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ### TODO
 
-* List types
-* Aearch by location using [`Location Datatype`](https://dev.socrata.com/docs/datatypes/location.html)
-* Cleanup auto-generated tests, fixtures, ecto, etc
+* Search by location and distance using [`Location Datatype`](https://dev.socrata.com/docs/datatypes/location.html)
+* Cleanup auto-generated tests, fixtures, ecto, etc.
+* Don't have `show` facility return an array with 1 item
 * Add telemetry metrics, counters, duration, etc.
 * Use database and/or cache (Redis, :ets)
 * Make `MobileFoodService.MobileFoodFacilities.Type` more generic for other name/value pairs of data like name, food items, etc.
 * Filter on `status: "APPROVED"` only?
 * Run `mix format --check-formatted` during CI/DI/GH actions
 * Run `mix credo` for code analysis
-* Add tests!
+* Add tests!!!
