@@ -12,8 +12,7 @@ defmodule MobileFoodService.Repo do
   def child_spec do
     {
       Finch,
-      name: __MODULE__,
-      pools: %{@api_config[:url] => [size: @api_config[:pool_size]]}
+      name: __MODULE__, pools: %{@api_config[:url] => [size: @api_config[:pool_size]]}
     }
   end
 

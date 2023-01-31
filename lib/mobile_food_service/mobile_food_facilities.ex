@@ -43,6 +43,7 @@ defmodule MobileFoodService.MobileFoodFacilities do
     cond do
       Enum.empty?(result) ->
         raise NoResultsError, queryable: "facilities where id = #{id}"
+
       true ->
         List.first(result)
         |> to_facility_map()

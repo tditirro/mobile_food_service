@@ -8,7 +8,17 @@ defmodule MobileFoodService.MobileFoodFacilitiesTest do
 
     import MobileFoodService.MobileFoodFacilitiesFixtures
 
-    @invalid_attrs %{address: nil, food_items: nil, id: nil, location_description: nil, name: nil, schedule: nil, schedule_url: nil, status: nil, type: nil}
+    @invalid_attrs %{
+      address: nil,
+      food_items: nil,
+      id: nil,
+      location_description: nil,
+      name: nil,
+      schedule: nil,
+      schedule_url: nil,
+      status: nil,
+      type: nil
+    }
 
     test "list_facilities/0 returns all facilities" do
       facility = facility_fixture()
@@ -21,7 +31,17 @@ defmodule MobileFoodService.MobileFoodFacilitiesTest do
     end
 
     test "create_facility/1 with valid data creates a facility" do
-      valid_attrs = %{address: "some address", food_items: "some food_items", id: 42, location_description: "some location_description", name: "some name", schedule: "some schedule", schedule_url: "some schedule_url", status: "some status", type: "some type"}
+      valid_attrs = %{
+        address: "some address",
+        food_items: "some food_items",
+        id: 42,
+        location_description: "some location_description",
+        name: "some name",
+        schedule: "some schedule",
+        schedule_url: "some schedule_url",
+        status: "some status",
+        type: "some type"
+      }
 
       assert {:ok, %Facility{} = facility} = MobileFoodFacilities.create_facility(valid_attrs)
       assert facility.address == "some address"
@@ -41,9 +61,22 @@ defmodule MobileFoodService.MobileFoodFacilitiesTest do
 
     test "update_facility/2 with valid data updates the facility" do
       facility = facility_fixture()
-      update_attrs = %{address: "some updated address", food_items: "some updated food_items", id: 43, location_description: "some updated location_description", name: "some updated name", schedule: "some updated schedule", schedule_url: "some updated schedule_url", status: "some updated status", type: "some updated type"}
 
-      assert {:ok, %Facility{} = facility} = MobileFoodFacilities.update_facility(facility, update_attrs)
+      update_attrs = %{
+        address: "some updated address",
+        food_items: "some updated food_items",
+        id: 43,
+        location_description: "some updated location_description",
+        name: "some updated name",
+        schedule: "some updated schedule",
+        schedule_url: "some updated schedule_url",
+        status: "some updated status",
+        type: "some updated type"
+      }
+
+      assert {:ok, %Facility{} = facility} =
+               MobileFoodFacilities.update_facility(facility, update_attrs)
+
       assert facility.address == "some updated address"
       assert facility.food_items == "some updated food_items"
       assert facility.id == 43
@@ -57,7 +90,10 @@ defmodule MobileFoodService.MobileFoodFacilitiesTest do
 
     test "update_facility/2 with invalid data returns error changeset" do
       facility = facility_fixture()
-      assert {:error, %Ecto.Changeset{}} = MobileFoodFacilities.update_facility(facility, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               MobileFoodFacilities.update_facility(facility, @invalid_attrs)
+
       assert facility == MobileFoodFacilities.get_facility!(facility.id)
     end
 

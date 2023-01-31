@@ -3,9 +3,39 @@ defmodule MobileFoodServiceWeb.FacilityControllerTest do
 
   import MobileFoodService.MobileFoodFacilitiesFixtures
 
-  @create_attrs %{address: "some address", food_items: "some food_items", id: 42, location_description: "some location_description", name: "some name", schedule: "some schedule", schedule_url: "some schedule_url", status: "some status", type: "some type"}
-  @update_attrs %{address: "some updated address", food_items: "some updated food_items", id: 43, location_description: "some updated location_description", name: "some updated name", schedule: "some updated schedule", schedule_url: "some updated schedule_url", status: "some updated status", type: "some updated type"}
-  @invalid_attrs %{address: nil, food_items: nil, id: nil, location_description: nil, name: nil, schedule: nil, schedule_url: nil, status: nil, type: nil}
+  @create_attrs %{
+    address: "some address",
+    food_items: "some food_items",
+    id: 42,
+    location_description: "some location_description",
+    name: "some name",
+    schedule: "some schedule",
+    schedule_url: "some schedule_url",
+    status: "some status",
+    type: "some type"
+  }
+  @update_attrs %{
+    address: "some updated address",
+    food_items: "some updated food_items",
+    id: 43,
+    location_description: "some updated location_description",
+    name: "some updated name",
+    schedule: "some updated schedule",
+    schedule_url: "some updated schedule_url",
+    status: "some updated status",
+    type: "some updated type"
+  }
+  @invalid_attrs %{
+    address: nil,
+    food_items: nil,
+    id: nil,
+    location_description: nil,
+    name: nil,
+    schedule: nil,
+    schedule_url: nil,
+    status: nil,
+    type: nil
+  }
 
   describe "index" do
     test "lists all facilities", %{conn: conn} do
