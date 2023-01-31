@@ -13,9 +13,9 @@ defmodule MobileFoodServiceWeb.Router do
       scope "/facilities" do
         pipe_through :api
         get "/types", TypeController, :index
-        get "/", FacilityController, :index
+        get "/search", FacilityController, :search
         get "/:id", FacilityController, :show
-        post "/search", FacilityController, :search
+        get "/", FacilityController, :index
       end
     end
   end
