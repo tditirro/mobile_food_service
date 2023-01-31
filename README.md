@@ -1,10 +1,12 @@
 # MobileFoodService
 
-API for discovering mobile food facilities written in Elixir using Phoenix Framework.
+API for discovering mobile food facilities written in Elixir using Phoenix Framework and Ecto.
 
 ## Quickstart
 
-To start your Phoenix server:
+* Required Erlang and Elixir versions can be found in [`.tool-versions`](.tool-versions)
+
+### To start your Phoenix server
 
 * Install dependencies with `mix deps.get`
 * View dependency tree with `mix deps.tree`
