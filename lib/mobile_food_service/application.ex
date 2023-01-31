@@ -8,7 +8,7 @@ defmodule MobileFoodService.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # TODO: Initialize data to :ets?
+      # TODO: Initialize data to :ets or a database?
       # Start the "Ecto" (aka API) repository
       MobileFoodService.Repo.child_spec(),
 

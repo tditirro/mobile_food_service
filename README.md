@@ -27,8 +27,8 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 This example is used to illustrate an application written in the Elixir language in combination with other frameworks such as Phoenix and Ecto (with a databases-less schema) while not requiring extentive setup or configuration.
 
 Ecto is used to demonstrate schema and changeset usage and validation while not requiring a database for data
-retrieval. The `Repo` in this case is actually an external API, but it should easily demonstrate how a database
-could be integrated.
+retrieval. The `Repo` in this case is actually an external API, but it should show how a database could easily
+be used.
 
 ## Examples
 
@@ -49,10 +49,9 @@ could be integrated.
 
 * Search by location and distance using [`Location Datatype`](https://dev.socrata.com/docs/datatypes/location.html)
 * Cleanup auto-generated tests, fixtures, ecto, etc.
-* Don't have `show` facility return an array with 1 item
 * Add telemetry metrics, counters, duration, etc.
 * Use database and/or cache (Redis, :ets)
-* Make `MobileFoodService.MobileFoodFacilities.Type` more generic for other name/value pairs of data like name, food items, etc.
+* Make `MobileFoodService.MobileFoodFacilities.Type` more generic for other name/value pairs of data and resources like names, food items, cities, etc.
 * Filter on `status: "APPROVED"` only?
 * Run `mix format --check-formatted` during CI/DI/GH actions
 * Run `mix credo` for code analysis
