@@ -28,7 +28,7 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 # Configures the Telemetry Poller
-config :telemetry_poller, :default, false
+# config :telemetry_poller, :default, false
 
 # Configures the client API - `MobileFoodService.Repo`
 config :mobile_food_service, SodaApi,

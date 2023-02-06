@@ -27,16 +27,16 @@ defmodule MobileFoodService.MobileFoodFacilitiesFixtures do
   # end
 
   # @doc """
-  # Generate a type.
+  # Generate a facility type.
   # """
-  # def type_fixture(attrs \\ %{}) do
-  #   {:ok, type} =
+  # def facility_type_fixture(attrs \\ %{}) do
+  #   {:ok, facility_type} =
   #     attrs
   #     |> Enum.into(%{
   #       name: "some name"
   #     })
-  #     |> MobileFoodService.MobileFoodFacilities.create_type()
+  #     |> MobileFoodService.MobileFoodFacilities.create_facility_type()
 
-  #   type
+  #   facility_type
   # end
 end

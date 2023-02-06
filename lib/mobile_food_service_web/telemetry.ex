@@ -36,7 +36,8 @@ defmodule MobileFoodServiceWeb.Telemetry do
         unit: {:native, :millisecond}
       ),
       summary("phoenix.router_dispatch.stop.duration",
-        tags: [:route],
+        tags: [:method, :status, :route],
+        tag_values: &get_router_metadata/1,
         unit: {:native, :millisecond}
       )
     ]
@@ -95,5 +96,9 @@ defmodule MobileFoodServiceWeb.Telemetry do
       # This function must call :telemetry.execute/3 and a metric must be added above.
       # {MobileFoodServiceWeb, :count_users, []}
     ]
+  end
+
+  defp get_router_metadata(%{conn: %{method: method, status: status}} = metadata) do
+    Map.merge(metadata, %{method: method, status: status})
   end
 end

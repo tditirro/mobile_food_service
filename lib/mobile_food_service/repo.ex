@@ -21,7 +21,7 @@ defmodule MobileFoodService.Repo do
     do_request(:get)
   end
 
-  def all_types!() do
+  def all_facility_types!() do
     do_request(:get, "?$select=distinct%20facilitytype")
   end
 

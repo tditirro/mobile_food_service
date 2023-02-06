@@ -1,4 +1,4 @@
-defmodule MobileFoodService.MobileFoodFacilities.Type do
+defmodule MobileFoodService.MobileFoodFacilities.FacilityType do
   @moduledoc """
   Schema, changeset and validations for a mobile food facility type
   """
@@ -20,8 +20,8 @@ defmodule MobileFoodService.MobileFoodFacilities.Type do
   end
 
   @doc false
-  def changeset(type \\ %Type{}, %{} = attrs) do
-    type
+  def changeset(facility_type \\ %FacilityType{}, %{} = attrs) do
+    facility_type
     |> cast(attrs, @permitted)
     |> validate_required(@required)
     |> apply_action!(:update)

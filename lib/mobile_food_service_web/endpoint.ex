@@ -26,7 +26,8 @@ defmodule MobileFoodServiceWeb.Endpoint do
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :mobile_food_service
+    # Not using an Ecto Repo
+    # plug Phoenix.Ecto.CheckRepoStatus, otp_app: :mobile_food_service
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,

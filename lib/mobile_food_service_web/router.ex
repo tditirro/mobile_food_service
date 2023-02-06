@@ -1,8 +1,6 @@
 defmodule MobileFoodServiceWeb.Router do
   use MobileFoodServiceWeb, :router
 
-  # alias MobileFoodServiceWeb.TypeController
-
   pipeline :api do
     plug :accepts, ["json"]
     plug Plug.Telemetry, event_prefix: [:mobile_food_service, :plug]
@@ -12,7 +10,7 @@ defmodule MobileFoodServiceWeb.Router do
     scope "/v1" do
       scope "/facilities" do
         pipe_through :api
-        get "/types", TypeController, :index
+        get "/types", FacilityTypeController, :index
         get "/search", FacilityController, :search
         get "/:id", FacilityController, :show
         get "/", FacilityController, :index

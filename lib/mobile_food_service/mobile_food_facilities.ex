@@ -4,7 +4,7 @@ defmodule MobileFoodService.MobileFoodFacilities do
   """
   alias Ecto.NoResultsError
   alias MobileFoodService.Repo
-  alias MobileFoodService.MobileFoodFacilities.{Facility, Type}
+  alias MobileFoodService.MobileFoodFacilities.{Facility, FacilityType}
 
   require Logger
 
@@ -65,18 +65,18 @@ defmodule MobileFoodService.MobileFoodFacilities do
   end
 
   @doc """
-  Returns the list of types.
+  Returns the list of facility types.
 
   ## Examples
 
-      iex> list_types!()
-      [%Type{}, ...]
+      iex> list_facility_types!()
+      [%FacilityType{}, ...]
 
   """
-  def list_types!() do
-    Repo.all_types!()
+  def list_facility_types!() do
+    Repo.all_facility_types!()
     |> Enum.reject(&Enum.empty?/1)
-    |> Enum.map(fn x -> Type.changeset(%{"name" => x["facilitytype"]}) end)
+    |> Enum.map(fn x -> FacilityType.changeset(%{"name" => x["facilitytype"]}) end)
   end
 
   def to_facility_map(%{} = params) do
