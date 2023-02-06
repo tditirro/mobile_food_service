@@ -11,7 +11,7 @@ API for discovering mobile food facilities written in Elixir using Phoenix Frame
 * Install dependencies with `mix deps.get`
 * View dependency tree with `mix deps.tree`
 * View outdated dependencies with `mix hex.outdated`
-* ~~Create and migrate your database with `mix ecto.setup`~~ N/A since Ecto is not used with a database.
+* ~~Create and migrate your database with `mix ecto.setup`~~ N/A since Ecto is not being used with a database.
 * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
 Run `mix phx.routes` to view all routes available.
@@ -24,11 +24,9 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ## Overview
 
-This example is used to illustrate an application written in the Elixir language in combination with other frameworks such as Phoenix and Ecto (with a databases-less schema) while not requiring extentive setup or configuration.
+This example is used to illustrate an application written in Elixir using Phoenix and Ecto (with a databases-less schema).
 
-Ecto is used to demonstrate schema and changeset usage and validation while not requiring a database for data
-retrieval. The `Repo` in this case is actually an external API, but it should show how a database could easily
-be used.
+Ecto is used to demonstrate schema and changeset usage and validation while not requiring a database. The `Repo` in this case is actually an external [Mobile Food Facility Permit API](https://data.sfgov.org/resource/rqzj-sfat.json), but a database could easily be integrated.
 
 ## Examples
 
@@ -49,9 +47,9 @@ be used.
 
 ### TODO
 
-* Cleanup auto-generated tests, fixtures, ecto, etc.
-* Use database and/or cache (Redis, :ets)
-* Make `MobileFoodService.MobileFoodFacilities.Type` more generic for other name/value pairs of data and resources like names, food items, cities, etc.
+* Cleanup auto-generated views, tests, fixtures, ecto, etc.
+* Make `MobileFoodService.MobileFoodFacilities.FacilityType` more generic for other name/value pairs of data and resources like names, food items, cities, etc.
+* Use a database and/or cache (Redis, :ets)
 * Filter on `status: "APPROVED"` only?
 * Run `mix format --check-formatted` during CI/DI/GH actions
 * Run `mix credo` for code analysis

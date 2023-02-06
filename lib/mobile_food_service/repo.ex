@@ -34,12 +34,10 @@ defmodule MobileFoodService.Repo do
   end
 
   def search_location!(latitude, longitude, radius) do
-    query =
-      URI.encode(
-        "$where=within_circle(location, #{to_string(latitude)}, #{to_string(longitude)}, #{to_string(radius)})"
-      )
-
-    do_request(:get, "?#{query}")
+    do_request(
+      :get,
+      "?#{URI.encode("$where=within_circle(location, #{latitude}, #{longitude}, #{radius})")}"
+    )
   end
 
   defp do_request(method, query_params \\ <<>>) do
