@@ -51,16 +51,30 @@ defmodule MobileFoodService.MobileFoodFacilities do
   end
 
   @doc """
-  Search the list of facilities.
+  Search for facilities by phrase query.
 
   ## Examples
 
-      iex> search("hamburgers")
+      iex> search_query("hamburgers")
       [%Facility{}, ...]
 
   """
-  def search!(query) do
-    Repo.search!(query)
+  def search_query!(query) do
+    Repo.search_query!(query)
+    |> Enum.map(fn x -> Facility.changeset(to_facility_map(x)) end)
+  end
+
+  @doc """
+  Search for facilities by location proximity.
+
+  ## Examples
+
+      iex> search_query("hamburgers")
+      [%Facility{}, ...]
+
+  """
+  def search_location!(latitude, longitude, radius) do
+    Repo.search_location!(latitude, longitude, radius)
     |> Enum.map(fn x -> Facility.changeset(to_facility_map(x)) end)
   end
 

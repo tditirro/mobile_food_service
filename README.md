@@ -36,6 +36,8 @@ be used.
 * <http://localhost:4000/api/v1/facilities/735318>
 * <http://localhost:4000/api/v1/facilities/types>
 * <http://localhost:4000/api/v1/facilities/search?q=hamburgers>
+* <http://localhost:4000/api/v1/facilities/search?latitude=37.76785244271805&longitude=-122.41610489253189&radius=1000>
+(radius in meters)
 
 ## Learn more
 
@@ -47,13 +49,11 @@ be used.
 
 ### TODO
 
-* Search by location and distance using [`Location Datatype`](https://dev.socrata.com/docs/datatypes/location.html)
 * Cleanup auto-generated tests, fixtures, ecto, etc.
-* Add telemetry metrics, counters, duration, etc.
 * Use database and/or cache (Redis, :ets)
 * Make `MobileFoodService.MobileFoodFacilities.Type` more generic for other name/value pairs of data and resources like names, food items, cities, etc.
 * Filter on `status: "APPROVED"` only?
 * Run `mix format --check-formatted` during CI/DI/GH actions
 * Run `mix credo` for code analysis
 * Add `Dockerfile` and `entrypoint.sh`
-* Add tests!!!
+* Add tests
