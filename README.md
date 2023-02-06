@@ -16,7 +16,7 @@ API for discovering mobile food facilities written in Elixir using Phoenix Frame
 
 Run `mix phx.routes` to view all routes available.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser to access the API.
+Now you can visit [`localhost:4000/api/v1/facilities/`](http://localhost:4000/api/v1/facilities/) from your browser to access the API.
 
 View the [Phoenix Live Dashboard](http://localhost:4000/dashboard) from your browser.
 
