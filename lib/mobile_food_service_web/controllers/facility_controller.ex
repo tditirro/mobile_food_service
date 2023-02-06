@@ -5,10 +5,10 @@ defmodule MobileFoodServiceWeb.FacilityController do
   def index(conn, _params) do
     conn
     |> put_status(:ok)
-    |> json(MobileFoodFacilities.list_facilities())
+    |> json(MobileFoodFacilities.list_facilities!())
   end
 
-  def show(conn, %{"id" => id}) do
+  def show(conn, %{"id" => id} = _params) do
     conn
     |> put_status(:ok)
     |> json(MobileFoodFacilities.get_facility!(id))

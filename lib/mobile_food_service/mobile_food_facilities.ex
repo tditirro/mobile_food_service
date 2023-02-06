@@ -13,12 +13,12 @@ defmodule MobileFoodService.MobileFoodFacilities do
 
   ## Examples
 
-      iex> list_facilities()
+      iex> list_facilities!()
       [%Facility{}, ...]
 
   """
-  def list_facilities do
-    Repo.all_facilities()
+  def list_facilities!() do
+    Repo.all_facilities!()
     |> Enum.reject(&Enum.empty?/1)
     |> Enum.map(fn x -> Facility.changeset(to_facility_map(x)) end)
   end
@@ -39,16 +39,15 @@ defmodule MobileFoodService.MobileFoodFacilities do
   """
   def get_facility!(id) do
     result = Repo.get!(id)
-    # Logger.info(IO.inspect(Enum.empty?(result), label: "EMPTY????"))
-    cond do
-      Enum.empty?(result) ->
-        raise NoResultsError, queryable: "facilities where id = #{id}"
 
-      true ->
-        List.first(result)
-        |> to_facility_map()
-        |> Facility.changeset()
+    if Enum.empty?(result) do
+      raise NoResultsError, queryable: "facilities where id = #{id}"
     end
+
+    result
+    |> List.first()
+    |> to_facility_map()
+    |> Facility.changeset()
   end
 
   @doc """
@@ -70,12 +69,12 @@ defmodule MobileFoodService.MobileFoodFacilities do
 
   ## Examples
 
-      iex> list_types()
+      iex> list_types!()
       [%Type{}, ...]
 
   """
-  def list_types() do
-    Repo.all_types()
+  def list_types!() do
+    Repo.all_types!()
     |> Enum.reject(&Enum.empty?/1)
     |> Enum.map(fn x -> Type.changeset(%{"name" => x["facilitytype"]}) end)
   end

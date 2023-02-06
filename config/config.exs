@@ -27,6 +27,10 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Configures the Telemetry Poller
+config :telemetry_poller, :default, false
+
+# Configures the client API - `MobileFoodService.Repo`
 config :mobile_food_service, SodaApi,
   url: "https://data.sfgov.org",
   path: "/resource/rqzj-sfat.json",

@@ -5,6 +5,6 @@ defmodule MobileFoodServiceWeb.TypeController do
   def index(conn, _params) do
     conn
     |> put_status(:ok)
-    |> json(MobileFoodFacilities.list_types())
+    |> json(MobileFoodFacilities.list_types!())
   end
 end
