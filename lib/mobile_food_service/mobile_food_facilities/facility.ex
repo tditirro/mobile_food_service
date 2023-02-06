@@ -9,8 +9,8 @@ defmodule MobileFoodService.MobileFoodFacilities.Facility do
   alias __MODULE__
 
   # Overly verbose since they're all the same, but defining separately for demonstration purposes
-  @required ~w(id name address schedule_url status)a
-  @permitted ~w(id name type food_items address location_description schedule schedule_url status)a
+  @required ~w(id name address latitude longitude schedule_url status)a
+  @permitted ~w(id name type food_items address latitude longitude location_description schedule schedule_url status)a
   @derivable @permitted
   @derive {Jason.Encoder, only: @derivable}
 
@@ -18,6 +18,8 @@ defmodule MobileFoodService.MobileFoodFacilities.Facility do
   embedded_schema do
     field :address, :string
     field :food_items, :string
+    field :latitude, :string
+    field :longitude, :string
     field :location_description, :string
     field :name, :string
     field :schedule, :string

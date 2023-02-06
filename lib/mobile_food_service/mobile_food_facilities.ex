@@ -86,6 +86,8 @@ defmodule MobileFoodService.MobileFoodFacilities do
       "type" => params["facilitytype"],
       "food_items" => params["fooditems"],
       "address" => params["address"],
+      "latitude" => params["latitude"],
+      "longitude" => params["longitude"],
       "location_description" => params["locationdescription"],
       "schedule" => params["dayshours"],
       "schedule_url" => params["schedule"],
