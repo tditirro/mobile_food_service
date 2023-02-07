@@ -4,9 +4,9 @@ defmodule MobileFoodService.MobileFoodFacilitiesFixtures do
   entities via the `MobileFoodService.MobileFoodFacilities` context.
   """
 
-  @doc """
-  Generate a facility.
-  """
+  # @doc """
+  # Generate a facility.
+  # """
   # def facility_fixture(attrs \\ %{}) do
   #   {:ok, facility} =
   #     attrs
