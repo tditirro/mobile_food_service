@@ -33,9 +33,18 @@ Ecto is used to demonstrate schema and changeset usage and validation while not 
 * <http://localhost:4000/api/v1/facilities>
 * <http://localhost:4000/api/v1/facilities/735318>
 * <http://localhost:4000/api/v1/facilities/types>
+
+### Search by Text
+
 * <http://localhost:4000/api/v1/facilities/search?q=hamburgers>
-* <http://localhost:4000/api/v1/facilities/search?latitude=37.76785244271805&longitude=-122.41610489253189&radius=1000>
-(radius in meters)
+
+### Search by Location
+
+* <http://localhost:4000/api/v1/facilities/search?latitude=37.76785244271805&longitude=-122.41610489253189&radius=1000> (radius in meters)
+
+### Search by Text and Location
+
+* <http://localhost:4000/api/v1/facilities/search?q=hamburgers&latitude=37.76785244271805&longitude=-122.41610489253189> (no radius will default to 1000 meters defined in compile time [`config.exs`](config/config.exs))
 
 ## Learn more
 
@@ -48,10 +57,10 @@ Ecto is used to demonstrate schema and changeset usage and validation while not 
 ### TODO
 
 * Cleanup auto-generated views, tests, fixtures, ecto, etc.
-* Make `MobileFoodService.MobileFoodFacilities.FacilityType` more generic for other name/value pairs of data and resources like names, food items, cities, etc.
+* Add health check
+* Add distance to location-baseed search results
+* Add tests
 * Use a database and/or cache (Redis, :ets)
 * Filter on `status: "APPROVED"` only?
-* Run `mix format --check-formatted` during CI/DI/GH actions
-* Run `mix credo` for code analysis
 * Add `Dockerfile` and `entrypoint.sh`
-* Add tests
+* Make `MobileFoodService.MobileFoodFacilities.FacilityType` more generic for other name/value pairs of data and resources like names, food items, cities, etc.

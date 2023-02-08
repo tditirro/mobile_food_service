@@ -34,7 +34,8 @@ config :phoenix, :json_library, Jason
 config :mobile_food_service, SodaApi,
   url: "https://data.sfgov.org",
   path: "/resource/rqzj-sfat.json",
-  pool_size: 5
+  pool_size: 5,
+  default_radius: "1000"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

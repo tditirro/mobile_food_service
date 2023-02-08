@@ -33,7 +33,7 @@ defmodule MobileFoodService.MobileFoodFacilities do
       iex> get_facility!(123)
       %Facility{}
 
-      iex> get_facility!(456)
+      iex> get_facility(456)
       ** (Ecto.NoResultsError)
 
   """
@@ -51,30 +51,16 @@ defmodule MobileFoodService.MobileFoodFacilities do
   end
 
   @doc """
-  Search for facilities by phrase query.
+  Search for facilities by text query and/or location.
 
   ## Examples
 
-      iex> search_query("hamburgers")
+      iex> search(%{"q" => "hamburgers", "latitude" => "37.76785244271805", "longitude" => "-122.41610489253189", "radius" => "5000"})
       [%Facility{}, ...]
 
   """
-  def search_query!(query) do
-    Repo.search_query!(query)
-    |> Enum.map(fn x -> Facility.changeset(to_facility_map(x)) end)
-  end
-
-  @doc """
-  Search for facilities by location proximity.
-
-  ## Examples
-
-      iex> search_query("hamburgers")
-      [%Facility{}, ...]
-
-  """
-  def search_location!(latitude, longitude, radius) do
-    Repo.search_location!(latitude, longitude, radius)
+  def search!(params) do
+    Repo.search!(params)
     |> Enum.map(fn x -> Facility.changeset(to_facility_map(x)) end)
   end
 
