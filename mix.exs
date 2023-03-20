@@ -38,7 +38,7 @@ defmodule MobileFoodService.MixProject do
       # {:postgrex, ">= 0.0.0"},
       # Specifically only including Ecto rather than the commented dependencies below
       {:ecto, "~> 3.9"},
-      {:phoenix, "~> 1.6.15"},
+      {:phoenix, "~> 1.7.2"},
       {:phoenix_ecto, "~> 4.4"},
       {:phoenix_live_dashboard, "~> 0.6"},
       {:telemetry_metrics, "~> 0.6"},
